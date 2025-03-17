@@ -10,6 +10,10 @@
 
 - Fix gha ([616b101](https://github.com/jimbrig/marksnipsai/commit/616b101911be512dd9b3a145a4ad8947a15ff70a))  - (Jimmy Briggs)
 
+## Documentation
+
+- Add repomix GHA badge ([271fadb](https://github.com/jimbrig/marksnipsai/commit/271fadb025e00fb5972bdc84df013aa43b40f466))  - (Jimmy Briggs)
+
 ## [1](https://github.com/jimbrig/marksnipsai/tree/v1)- (2025-03-17)
 
 ## Configuration
