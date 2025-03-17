@@ -1,0 +1,42 @@
+[2025-03-17 18:31:21] === Starting file watcher ===
+[2025-03-17 18:31:21] Monitoring folder: C:\Users\jimmy\Downloads\MarkSnips
+[2025-03-17 18:31:21] Log file: C:\Users\jimmy\Downloads\MarkSnips\Logs\watcher.log
+[2025-03-17 18:31:21] Enhancement script: C:\Users\jimmy\Downloads\MarkSnips\Source\enhance.ps1
+[2025-03-17 18:31:21] Current folder (C:\Users\jimmy\Downloads\MarkSnips\Source): C:\Users\jimmy\Downloads\MarkSnips\Source
+[2025-03-17 18:31:21] PSScriptRoot: C:\Users\jimmy\Downloads\MarkSnips\Source
+[2025-03-17 18:31:21] Base folder: C:\Users\jimmy\Downloads\MarkSnips
+[2025-03-17 18:31:21] Enhanced folder: C:\Users\jimmy\Downloads\MarkSnips\Enhanced
+[2025-03-17 18:31:21] Originals folder: C:\Users\jimmy\Downloads\MarkSnips\Originals
+[2025-03-17 18:31:21] Starting polling-based file watcher
+[2025-03-17 18:31:21] Notification displayed using Windows Forms
+[2025-03-17 18:32:01] Checking for new files. Found 40 files in watch folder.
+[2025-03-17 18:32:01] New file detected: 2024-04-16 - BastienLaw - Invoice - Supplemental Pricing Breakdown.md
+[2025-03-17 18:32:01] Formatted filename: 2024-04-16 - BastienLaw - Invoice - Supplemental Pricing Breakdown.md -> 2025-03-17 - 2024 04 16   BastienLaw   Invoice   Supplemental Pricing Breakdown.md
+[2025-03-17 18:32:03] Debug - FilePath: C:\Users\jimmy\Downloads\MarkSnips\2024-04-16 - BastienLaw - Invoice - Supplemental Pricing Breakdown.md
+[2025-03-17 18:32:03] Debug - OriginalPath: C:\Users\jimmy\Downloads\MarkSnips\Originals\2024-04-16 - BastienLaw - Invoice - Supplemental Pricing Breakdown.md
+[2025-03-17 18:32:03] Debug - EnhancedPath: C:\Users\jimmy\Downloads\MarkSnips\Enhanced\2025-03-17 - 2024 04 16   BastienLaw   Invoice   Supplemental Pricing Breakdown.md
+[2025-03-17 18:32:03] Debug - File exists: True
+[2025-03-17 18:32:03] File content accessed successfully
+[2025-03-17 18:32:03] Copied original file to: C:\Users\jimmy\Downloads\MarkSnips\Originals\2024-04-16 - BastienLaw - Invoice - Supplemental Pricing Breakdown.md
+[2025-03-17 18:32:03] Processing file from original location: C:\Users\jimmy\Downloads\MarkSnips\Originals\2024-04-16 - BastienLaw - Invoice - Supplemental Pricing Breakdown.md -> C:\Users\jimmy\Downloads\MarkSnips\Enhanced\2025-03-17 - 2024 04 16   BastienLaw   Invoice   Supplemental Pricing Breakdown.md
+[2025-03-17 18:32:18] Removed original file from watch folder
+[2025-03-17 18:32:18] Successfully enhanced: 2024-04-16 - BastienLaw - Invoice - Supplemental Pricing Breakdown.md
+[2025-03-17 18:32:18] Notification displayed using Windows Forms
+[2025-03-17 18:32:18] New file detected: 2024-08-05_17-19-14_Perplexity.ai_In R, how can I creat a function that takes JSON and derives....md
+[2025-03-17 18:32:18] Formatted filename: 2024-08-05_17-19-14_Perplexity.ai_In R, how can I creat a function that takes JSON and derives....md -> 2025-03-17 - 2024 08 05 17 19 14 Perplexity.ai In R, how can I creat a function that takes JSON and derives....md
+[2025-03-17 18:32:20] Debug - FilePath: C:\Users\jimmy\Downloads\MarkSnips\2024-08-05_17-19-14_Perplexity.ai_In R, how can I creat a function that takes JSON and derives....md
+[2025-03-17 18:32:20] Debug - OriginalPath: C:\Users\jimmy\Downloads\MarkSnips\Originals\2024-08-05_17-19-14_Perplexity.ai_In R, how can I creat a function that takes JSON and derives....md
+[2025-03-17 18:32:20] Debug - EnhancedPath: C:\Users\jimmy\Downloads\MarkSnips\Enhanced\2025-03-17 - 2024 08 05 17 19 14 Perplexity.ai In R, how can I creat a function that takes JSON and derives....md
+[2025-03-17 18:32:20] Debug - File exists: True
+[2025-03-17 18:32:20] File content accessed successfully
+[2025-03-17 18:32:20] Copied original file to: C:\Users\jimmy\Downloads\MarkSnips\Originals\2024-08-05_17-19-14_Perplexity.ai_In R, how can I creat a function that takes JSON and derives....md
+[2025-03-17 18:32:20] Processing file from original location: C:\Users\jimmy\Downloads\MarkSnips\Originals\2024-08-05_17-19-14_Perplexity.ai_In R, how can I creat a function that takes JSON and derives....md -> C:\Users\jimmy\Downloads\MarkSnips\Enhanced\2025-03-17 - 2024 08 05 17 19 14 Perplexity.ai In R, how can I creat a function that takes JSON and derives....md
+[2025-03-17 18:32:48] Removed original file from watch folder
+[2025-03-17 18:32:48] Successfully enhanced: 2024-08-05_17-19-14_Perplexity.ai_In R, how can I creat a function that takes JSON and derives....md
+[2025-03-17 18:32:48] Notification displayed using Windows Forms
+[2025-03-17 18:56:23] New file detected: README.md
+[2025-03-17 18:56:23] Skipping processing for: README.md
+[2025-03-17 18:56:28] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 18:56:33] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 18:56:38] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 18:56:43] Checking for new files. Found 1 files in watch folder.
