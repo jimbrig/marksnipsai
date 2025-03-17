@@ -1,0 +1,520 @@
+[2025-03-17 18:31:21] Folder already exists: C:\Users\jimmy\Downloads\MarkSnips
+[2025-03-17 18:31:21] Folder already exists: C:\Users\jimmy\Downloads\MarkSnips\Originals
+[2025-03-17 18:31:21] Folder already exists: C:\Users\jimmy\Downloads\MarkSnips\Enhanced
+[2025-03-17 18:31:21] === Starting file watcher ===
+[2025-03-17 18:31:21] Monitoring folder: C:\Users\jimmy\Downloads\MarkSnips
+[2025-03-17 18:31:21] Log file: C:\Users\jimmy\Downloads\MarkSnips\Logs\watcher.log
+[2025-03-17 18:31:21] Enhancement script: C:\Users\jimmy\Downloads\MarkSnips\Source\enhance.ps1
+[2025-03-17 18:31:21] Current folder (C:\Users\jimmy\Downloads\MarkSnips\Source): C:\Users\jimmy\Downloads\MarkSnips\Source
+[2025-03-17 18:31:21] PSScriptRoot: C:\Users\jimmy\Downloads\MarkSnips\Source
+[2025-03-17 18:31:21] Base folder: C:\Users\jimmy\Downloads\MarkSnips
+[2025-03-17 18:31:21] Enhanced folder: C:\Users\jimmy\Downloads\MarkSnips\Enhanced
+[2025-03-17 18:31:21] Originals folder: C:\Users\jimmy\Downloads\MarkSnips\Originals
+[2025-03-17 18:31:21] Starting polling-based file watcher
+[2025-03-17 18:31:21] Notification displayed using Windows Forms
+[2025-03-17 18:32:01] Checking for new files. Found 40 files in watch folder.
+[2025-03-17 18:32:01] New file detected: 2024-04-16 - BastienLaw - Invoice - Supplemental Pricing Breakdown.md
+[2025-03-17 18:32:01] Formatted filename: 2024-04-16 - BastienLaw - Invoice - Supplemental Pricing Breakdown.md -> 2025-03-17 - 2024 04 16   BastienLaw   Invoice   Supplemental Pricing Breakdown.md
+[2025-03-17 18:32:03] Debug - FilePath: C:\Users\jimmy\Downloads\MarkSnips\2024-04-16 - BastienLaw - Invoice - Supplemental Pricing Breakdown.md
+[2025-03-17 18:32:03] Debug - OriginalPath: C:\Users\jimmy\Downloads\MarkSnips\Originals\2024-04-16 - BastienLaw - Invoice - Supplemental Pricing Breakdown.md
+[2025-03-17 18:32:03] Debug - EnhancedPath: C:\Users\jimmy\Downloads\MarkSnips\Enhanced\2025-03-17 - 2024 04 16   BastienLaw   Invoice   Supplemental Pricing Breakdown.md
+[2025-03-17 18:32:03] Debug - File exists: True
+[2025-03-17 18:32:03] File content accessed successfully
+[2025-03-17 18:32:03] Copied original file to: C:\Users\jimmy\Downloads\MarkSnips\Originals\2024-04-16 - BastienLaw - Invoice - Supplemental Pricing Breakdown.md
+[2025-03-17 18:32:03] Processing file from original location: C:\Users\jimmy\Downloads\MarkSnips\Originals\2024-04-16 - BastienLaw - Invoice - Supplemental Pricing Breakdown.md -> C:\Users\jimmy\Downloads\MarkSnips\Enhanced\2025-03-17 - 2024 04 16   BastienLaw   Invoice   Supplemental Pricing Breakdown.md
+[2025-03-17 18:32:18] Removed original file from watch folder
+[2025-03-17 18:32:18] Successfully enhanced: 2024-04-16 - BastienLaw - Invoice - Supplemental Pricing Breakdown.md
+[2025-03-17 18:32:18] Notification displayed using Windows Forms
+[2025-03-17 18:32:18] New file detected: 2024-08-05_17-19-14_Perplexity.ai_In R, how can I creat a function that takes JSON and derives....md
+[2025-03-17 18:32:18] Formatted filename: 2024-08-05_17-19-14_Perplexity.ai_In R, how can I creat a function that takes JSON and derives....md -> 2025-03-17 - 2024 08 05 17 19 14 Perplexity.ai In R, how can I creat a function that takes JSON and derives....md
+[2025-03-17 18:32:20] Debug - FilePath: C:\Users\jimmy\Downloads\MarkSnips\2024-08-05_17-19-14_Perplexity.ai_In R, how can I creat a function that takes JSON and derives....md
+[2025-03-17 18:32:20] Debug - OriginalPath: C:\Users\jimmy\Downloads\MarkSnips\Originals\2024-08-05_17-19-14_Perplexity.ai_In R, how can I creat a function that takes JSON and derives....md
+[2025-03-17 18:32:20] Debug - EnhancedPath: C:\Users\jimmy\Downloads\MarkSnips\Enhanced\2025-03-17 - 2024 08 05 17 19 14 Perplexity.ai In R, how can I creat a function that takes JSON and derives....md
+[2025-03-17 18:32:20] Debug - File exists: True
+[2025-03-17 18:32:20] File content accessed successfully
+[2025-03-17 18:32:20] Copied original file to: C:\Users\jimmy\Downloads\MarkSnips\Originals\2024-08-05_17-19-14_Perplexity.ai_In R, how can I creat a function that takes JSON and derives....md
+[2025-03-17 18:32:20] Processing file from original location: C:\Users\jimmy\Downloads\MarkSnips\Originals\2024-08-05_17-19-14_Perplexity.ai_In R, how can I creat a function that takes JSON and derives....md -> C:\Users\jimmy\Downloads\MarkSnips\Enhanced\2025-03-17 - 2024 08 05 17 19 14 Perplexity.ai In R, how can I creat a function that takes JSON and derives....md
+[2025-03-17 18:32:48] Removed original file from watch folder
+[2025-03-17 18:32:48] Successfully enhanced: 2024-08-05_17-19-14_Perplexity.ai_In R, how can I creat a function that takes JSON and derives....md
+[2025-03-17 18:32:48] Notification displayed using Windows Forms
+[2025-03-17 18:32:48] New file detected: 2024-11-30_18-16-53_ChatGPT_Entrata API OpenAPI Spec....md
+[2025-03-17 18:32:48] Formatted filename: 2024-11-30_18-16-53_ChatGPT_Entrata API OpenAPI Spec....md -> 2025-03-17 - 2024 11 30 18 16 53 ChatGPT Entrata API OpenAPI Spec....md
+[2025-03-17 18:32:50] Debug - FilePath: C:\Users\jimmy\Downloads\MarkSnips\2024-11-30_18-16-53_ChatGPT_Entrata API OpenAPI Spec....md
+[2025-03-17 18:32:50] Debug - OriginalPath: C:\Users\jimmy\Downloads\MarkSnips\Originals\2024-11-30_18-16-53_ChatGPT_Entrata API OpenAPI Spec....md
+[2025-03-17 18:32:50] Debug - EnhancedPath: C:\Users\jimmy\Downloads\MarkSnips\Enhanced\2025-03-17 - 2024 11 30 18 16 53 ChatGPT Entrata API OpenAPI Spec....md
+[2025-03-17 18:32:50] Debug - File exists: True
+[2025-03-17 18:32:50] File content accessed successfully
+[2025-03-17 18:32:50] Copied original file to: C:\Users\jimmy\Downloads\MarkSnips\Originals\2024-11-30_18-16-53_ChatGPT_Entrata API OpenAPI Spec....md
+[2025-03-17 18:32:50] Processing file from original location: C:\Users\jimmy\Downloads\MarkSnips\Originals\2024-11-30_18-16-53_ChatGPT_Entrata API OpenAPI Spec....md -> C:\Users\jimmy\Downloads\MarkSnips\Enhanced\2025-03-17 - 2024 11 30 18 16 53 ChatGPT Entrata API OpenAPI Spec....md
+[2025-03-17 18:33:26] Removed original file from watch folder
+[2025-03-17 18:33:26] Successfully enhanced: 2024-11-30_18-16-53_ChatGPT_Entrata API OpenAPI Spec....md
+[2025-03-17 18:33:26] Notification displayed using Windows Forms
+[2025-03-17 18:33:26] New file detected: 2024-12-23_17-44-38_Perplexity.ai_How can I leverage shiny widgets airdatepicker input widget....md
+[2025-03-17 18:33:26] Formatted filename: 2024-12-23_17-44-38_Perplexity.ai_How can I leverage shiny widgets airdatepicker input widget....md -> 2025-03-17 - 2024 12 23 17 44 38 Perplexity.ai How can I leverage shiny widgets airdatepicker input widget....md
+[2025-03-17 18:33:28] Debug - FilePath: C:\Users\jimmy\Downloads\MarkSnips\2024-12-23_17-44-38_Perplexity.ai_How can I leverage shiny widgets airdatepicker input widget....md
+[2025-03-17 18:33:28] Debug - OriginalPath: C:\Users\jimmy\Downloads\MarkSnips\Originals\2024-12-23_17-44-38_Perplexity.ai_How can I leverage shiny widgets airdatepicker input widget....md
+[2025-03-17 18:33:28] Debug - EnhancedPath: C:\Users\jimmy\Downloads\MarkSnips\Enhanced\2025-03-17 - 2024 12 23 17 44 38 Perplexity.ai How can I leverage shiny widgets airdatepicker input widget....md
+[2025-03-17 18:33:28] Debug - File exists: True
+[2025-03-17 18:33:28] File content accessed successfully
+[2025-03-17 18:33:28] Copied original file to: C:\Users\jimmy\Downloads\MarkSnips\Originals\2024-12-23_17-44-38_Perplexity.ai_How can I leverage shiny widgets airdatepicker input widget....md
+[2025-03-17 18:33:28] Processing file from original location: C:\Users\jimmy\Downloads\MarkSnips\Originals\2024-12-23_17-44-38_Perplexity.ai_How can I leverage shiny widgets airdatepicker input widget....md -> C:\Users\jimmy\Downloads\MarkSnips\Enhanced\2025-03-17 - 2024 12 23 17 44 38 Perplexity.ai How can I leverage shiny widgets airdatepicker input widget....md
+[2025-03-17 18:33:57] Removed original file from watch folder
+[2025-03-17 18:33:57] Successfully enhanced: 2024-12-23_17-44-38_Perplexity.ai_How can I leverage shiny widgets airdatepicker input widget....md
+[2025-03-17 18:33:57] Notification displayed using Windows Forms
+[2025-03-17 18:33:57] New file detected: 2024-12-31_13-49-12_Perplexity.ai_help me design a leasing market survey shiny app for GMH....md
+[2025-03-17 18:33:57] Formatted filename: 2024-12-31_13-49-12_Perplexity.ai_help me design a leasing market survey shiny app for GMH....md -> 2025-03-17 - 2024 12 31 13 49 12 Perplexity.ai help me design a leasing market survey shiny app for GMH....md
+[2025-03-17 18:33:59] Debug - FilePath: C:\Users\jimmy\Downloads\MarkSnips\2024-12-31_13-49-12_Perplexity.ai_help me design a leasing market survey shiny app for GMH....md
+[2025-03-17 18:33:59] Debug - OriginalPath: C:\Users\jimmy\Downloads\MarkSnips\Originals\2024-12-31_13-49-12_Perplexity.ai_help me design a leasing market survey shiny app for GMH....md
+[2025-03-17 18:33:59] Debug - EnhancedPath: C:\Users\jimmy\Downloads\MarkSnips\Enhanced\2025-03-17 - 2024 12 31 13 49 12 Perplexity.ai help me design a leasing market survey shiny app for GMH....md
+[2025-03-17 18:33:59] Debug - File exists: True
+[2025-03-17 18:33:59] File content accessed successfully
+[2025-03-17 18:33:59] Copied original file to: C:\Users\jimmy\Downloads\MarkSnips\Originals\2024-12-31_13-49-12_Perplexity.ai_help me design a leasing market survey shiny app for GMH....md
+[2025-03-17 18:33:59] Processing file from original location: C:\Users\jimmy\Downloads\MarkSnips\Originals\2024-12-31_13-49-12_Perplexity.ai_help me design a leasing market survey shiny app for GMH....md -> C:\Users\jimmy\Downloads\MarkSnips\Enhanced\2025-03-17 - 2024 12 31 13 49 12 Perplexity.ai help me design a leasing market survey shiny app for GMH....md
+[2025-03-17 18:34:26] Removed original file from watch folder
+[2025-03-17 18:34:26] Successfully enhanced: 2024-12-31_13-49-12_Perplexity.ai_help me design a leasing market survey shiny app for GMH....md
+[2025-03-17 18:34:26] Notification displayed using Windows Forms
+[2025-03-17 18:34:26] New file detected: 2025-03-17 - MarkSnips - Text generation and Prompting - OpenAI API - REFACTORED.md
+[2025-03-17 18:34:26] Formatted filename: 2025-03-17 - MarkSnips - Text generation and Prompting - OpenAI API - REFACTORED.md -> 2025-03-17 - 2025 03 17   MarkSnips   Text generation and Prompting   OpenAI API   REFACTORED.md
+[2025-03-17 18:34:28] Debug - FilePath: C:\Users\jimmy\Downloads\MarkSnips\2025-03-17 - MarkSnips - Text generation and Prompting - OpenAI API - REFACTORED.md
+[2025-03-17 18:34:28] Debug - OriginalPath: C:\Users\jimmy\Downloads\MarkSnips\Originals\2025-03-17 - MarkSnips - Text generation and Prompting - OpenAI API - REFACTORED.md
+[2025-03-17 18:34:28] Debug - EnhancedPath: C:\Users\jimmy\Downloads\MarkSnips\Enhanced\2025-03-17 - 2025 03 17   MarkSnips   Text generation and Prompting   OpenAI API   REFACTORED.md
+[2025-03-17 18:34:28] Debug - File exists: True
+[2025-03-17 18:34:28] File content accessed successfully
+[2025-03-17 18:34:28] Copied original file to: C:\Users\jimmy\Downloads\MarkSnips\Originals\2025-03-17 - MarkSnips - Text generation and Prompting - OpenAI API - REFACTORED.md
+[2025-03-17 18:34:28] Processing file from original location: C:\Users\jimmy\Downloads\MarkSnips\Originals\2025-03-17 - MarkSnips - Text generation and Prompting - OpenAI API - REFACTORED.md -> C:\Users\jimmy\Downloads\MarkSnips\Enhanced\2025-03-17 - 2025 03 17   MarkSnips   Text generation and Prompting   OpenAI API   REFACTORED.md
+[2025-03-17 18:34:56] Removed original file from watch folder
+[2025-03-17 18:34:56] Successfully enhanced: 2025-03-17 - MarkSnips - Text generation and Prompting - OpenAI API - REFACTORED.md
+[2025-03-17 18:34:56] Notification displayed using Windows Forms
+[2025-03-17 18:34:56] New file detected: 2025-03-17 - MarkSnips - Text generation and prompting - OpenAI API.md
+[2025-03-17 18:34:56] Formatted filename: 2025-03-17 - MarkSnips - Text generation and prompting - OpenAI API.md -> 2025-03-17 - 2025 03 17   MarkSnips   Text generation and prompting   OpenAI API.md
+[2025-03-17 18:34:58] Debug - FilePath: C:\Users\jimmy\Downloads\MarkSnips\2025-03-17 - MarkSnips - Text generation and prompting - OpenAI API.md
+[2025-03-17 18:34:58] Debug - OriginalPath: C:\Users\jimmy\Downloads\MarkSnips\Originals\2025-03-17 - MarkSnips - Text generation and prompting - OpenAI API.md
+[2025-03-17 18:34:58] Debug - EnhancedPath: C:\Users\jimmy\Downloads\MarkSnips\Enhanced\2025-03-17 - 2025 03 17   MarkSnips   Text generation and prompting   OpenAI API.md
+[2025-03-17 18:34:58] Debug - File exists: True
+[2025-03-17 18:34:58] File content accessed successfully
+[2025-03-17 18:34:58] Copied original file to: C:\Users\jimmy\Downloads\MarkSnips\Originals\2025-03-17 - MarkSnips - Text generation and prompting - OpenAI API.md
+[2025-03-17 18:34:58] Processing file from original location: C:\Users\jimmy\Downloads\MarkSnips\Originals\2025-03-17 - MarkSnips - Text generation and prompting - OpenAI API.md -> C:\Users\jimmy\Downloads\MarkSnips\Enhanced\2025-03-17 - 2025 03 17   MarkSnips   Text generation and prompting   OpenAI API.md
+[2025-03-17 18:35:25] Removed original file from watch folder
+[2025-03-17 18:35:25] Successfully enhanced: 2025-03-17 - MarkSnips - Text generation and prompting - OpenAI API.md
+[2025-03-17 18:35:25] Notification displayed using Windows Forms
+[2025-03-17 18:35:25] New file detected: Artificial Intelligence at No Clocks, LLC - Standards of Practice.md
+[2025-03-17 18:35:25] Formatted filename: Artificial Intelligence at No Clocks, LLC - Standards of Practice.md -> 2025-03-17 - Artificial Intelligence at No Clocks, LLC   Standards of Practice.md
+[2025-03-17 18:35:27] Debug - FilePath: C:\Users\jimmy\Downloads\MarkSnips\Artificial Intelligence at No Clocks, LLC - Standards of Practice.md
+[2025-03-17 18:35:27] Debug - OriginalPath: C:\Users\jimmy\Downloads\MarkSnips\Originals\Artificial Intelligence at No Clocks, LLC - Standards of Practice.md
+[2025-03-17 18:35:27] Debug - EnhancedPath: C:\Users\jimmy\Downloads\MarkSnips\Enhanced\2025-03-17 - Artificial Intelligence at No Clocks, LLC   Standards of Practice.md
+[2025-03-17 18:35:27] Debug - File exists: True
+[2025-03-17 18:35:27] File content accessed successfully
+[2025-03-17 18:35:27] Copied original file to: C:\Users\jimmy\Downloads\MarkSnips\Originals\Artificial Intelligence at No Clocks, LLC - Standards of Practice.md
+[2025-03-17 18:35:27] Processing file from original location: C:\Users\jimmy\Downloads\MarkSnips\Originals\Artificial Intelligence at No Clocks, LLC - Standards of Practice.md -> C:\Users\jimmy\Downloads\MarkSnips\Enhanced\2025-03-17 - Artificial Intelligence at No Clocks, LLC   Standards of Practice.md
+[2025-03-17 18:36:14] Removed original file from watch folder
+[2025-03-17 18:36:14] Successfully enhanced: Artificial Intelligence at No Clocks, LLC - Standards of Practice.md
+[2025-03-17 18:36:14] Notification displayed using Windows Forms
+[2025-03-17 18:36:14] New file detected: Authentication Methods Sessions, Tokens, and Security Best Practices (2).md
+[2025-03-17 18:36:14] Formatted filename: Authentication Methods Sessions, Tokens, and Security Best Practices (2).md -> 2025-03-17 - Authentication Methods Sessions, Tokens, and Security Best Practices (2).md
+[2025-03-17 18:36:16] Debug - FilePath: C:\Users\jimmy\Downloads\MarkSnips\Authentication Methods Sessions, Tokens, and Security Best Practices (2).md
+[2025-03-17 18:36:16] Debug - OriginalPath: C:\Users\jimmy\Downloads\MarkSnips\Originals\Authentication Methods Sessions, Tokens, and Security Best Practices (2).md
+[2025-03-17 18:36:16] Debug - EnhancedPath: C:\Users\jimmy\Downloads\MarkSnips\Enhanced\2025-03-17 - Authentication Methods Sessions, Tokens, and Security Best Practices (2).md
+[2025-03-17 18:36:16] Debug - File exists: True
+[2025-03-17 18:36:16] File content accessed successfully
+[2025-03-17 18:36:16] Copied original file to: C:\Users\jimmy\Downloads\MarkSnips\Originals\Authentication Methods Sessions, Tokens, and Security Best Practices (2).md
+[2025-03-17 18:36:16] Processing file from original location: C:\Users\jimmy\Downloads\MarkSnips\Originals\Authentication Methods Sessions, Tokens, and Security Best Practices (2).md -> C:\Users\jimmy\Downloads\MarkSnips\Enhanced\2025-03-17 - Authentication Methods Sessions, Tokens, and Security Best Practices (2).md
+[2025-03-17 18:37:00] File monitoring stopped.
+[2025-03-17 18:37:00] Notification displayed using Windows Forms
+[2025-03-17 18:46:38] Folder already exists: C:\Users\jimmy\Downloads\MarkSnips
+[2025-03-17 18:46:38] Folder already exists: C:\Users\jimmy\Downloads\MarkSnips\Originals
+[2025-03-17 18:46:38] Folder already exists: C:\Users\jimmy\Downloads\MarkSnips\Enhanced
+[2025-03-17 18:46:38] === Starting file watcher ===
+[2025-03-17 18:46:38] Monitoring folder: C:\Users\jimmy\Downloads\MarkSnips
+[2025-03-17 18:46:38] Log file: C:\Users\jimmy\Downloads\MarkSnips\Logs\watcher.log
+[2025-03-17 18:46:38] Enhancement script: C:\Users\jimmy\Downloads\MarkSnips\Source\enhance.ps1
+[2025-03-17 18:46:38] Current folder (C:\Users\jimmy\Downloads\MarkSnips\Source): C:\Users\jimmy\Downloads\MarkSnips\Source
+[2025-03-17 18:46:38] PSScriptRoot: C:\Users\jimmy\Downloads\MarkSnips\Source
+[2025-03-17 18:46:38] Base folder: C:\Users\jimmy\Downloads\MarkSnips
+[2025-03-17 18:46:38] Enhanced folder: C:\Users\jimmy\Downloads\MarkSnips\Enhanced
+[2025-03-17 18:46:38] Originals folder: C:\Users\jimmy\Downloads\MarkSnips\Originals
+[2025-03-17 18:46:38] Starting polling-based file watcher
+[2025-03-17 18:46:38] Notification displayed using Windows Forms
+[2025-03-17 18:46:38] Found 18 existing files to process on startup
+[2025-03-17 18:46:38] File content accessed successfully
+[2025-03-17 18:46:38] Copied original file to: C:\Users\jimmy\Downloads\MarkSnips\Originals\Introduction.md
+[2025-03-17 18:46:38] Requesting AI to generate filename for: Introduction.md
+[2025-03-17 18:46:44] AI generated filename: 2025-03-17-password-storage-best-practices.md
+[2025-03-17 18:46:44] Processing file from original location: C:\Users\jimmy\Downloads\MarkSnips\Originals\Introduction.md -> C:\Users\jimmy\Downloads\MarkSnips\Enhanced\2025-03-17-password-storage-best-practices.md
+[2025-03-17 18:47:08] Removed original file from watch folder
+[2025-03-17 18:47:08] Successfully enhanced: Introduction.md -> 2025-03-17-password-storage-best-practices.md
+[2025-03-17 18:47:08] Notification displayed using Windows Forms
+[2025-03-17 18:47:08] File content accessed successfully
+[2025-03-17 18:47:08] Copied original file to: C:\Users\jimmy\Downloads\MarkSnips\Originals\Leasing Market Data Survey (1).md
+[2025-03-17 18:47:08] Requesting AI to generate filename for: Leasing Market Data Survey (1).md
+[2025-03-17 18:47:14] AI generated filename: 2025-03-17-market-survey-property-summary-module.md
+[2025-03-17 18:47:14] Processing file from original location: C:\Users\jimmy\Downloads\MarkSnips\Originals\Leasing Market Data Survey (1).md -> C:\Users\jimmy\Downloads\MarkSnips\Enhanced\2025-03-17-market-survey-property-summary-module.md
+[2025-03-17 18:47:40] Removed original file from watch folder
+[2025-03-17 18:47:40] Successfully enhanced: Leasing Market Data Survey (1).md -> 2025-03-17-market-survey-property-summary-module.md
+[2025-03-17 18:47:40] Notification displayed using Windows Forms
+[2025-03-17 18:47:40] File content accessed successfully
+[2025-03-17 18:47:40] Copied original file to: C:\Users\jimmy\Downloads\MarkSnips\Originals\Leasing Market Data Survey.md
+[2025-03-17 18:47:40] Requesting AI to generate filename for: Leasing Market Data Survey.md
+[2025-03-17 18:47:47] AI generated filename: 2025-03-17-market-survey-and-entrata-data-integration.md
+[2025-03-17 18:47:47] Processing file from original location: C:\Users\jimmy\Downloads\MarkSnips\Originals\Leasing Market Data Survey.md -> C:\Users\jimmy\Downloads\MarkSnips\Enhanced\2025-03-17-market-survey-and-entrata-data-integration.md
+[2025-03-17 18:48:31] Removed original file from watch folder
+[2025-03-17 18:48:31] Successfully enhanced: Leasing Market Data Survey.md -> 2025-03-17-market-survey-and-entrata-data-integration.md
+[2025-03-17 18:48:31] Notification displayed using Windows Forms
+[2025-03-17 18:48:31] File content accessed successfully
+[2025-03-17 18:48:31] Copied original file to: C:\Users\jimmy\Downloads\MarkSnips\Originals\Legacy Windows 10 Initial Blog Post Intro.md
+[2025-03-17 18:48:31] Requesting AI to generate filename for: Legacy Windows 10 Initial Blog Post Intro.md
+[2025-03-17 18:48:38] AI generated filename: 2025-03-17-setting-up-developer-environment-windows10.md
+[2025-03-17 18:48:38] Processing file from original location: C:\Users\jimmy\Downloads\MarkSnips\Originals\Legacy Windows 10 Initial Blog Post Intro.md -> C:\Users\jimmy\Downloads\MarkSnips\Enhanced\2025-03-17-setting-up-developer-environment-windows10.md
+[2025-03-17 18:48:55] Removed original file from watch folder
+[2025-03-17 18:48:55] Successfully enhanced: Legacy Windows 10 Initial Blog Post Intro.md -> 2025-03-17-setting-up-developer-environment-windows10.md
+[2025-03-17 18:48:56] Notification displayed using Windows Forms
+[2025-03-17 18:48:56] File content accessed successfully
+[2025-03-17 18:48:56] Copied original file to: C:\Users\jimmy\Downloads\MarkSnips\Originals\MarkSnips_Web Search and States with Responses API  OpenAI Cookbook (1).md
+[2025-03-17 18:48:56] Requesting AI to generate filename for: MarkSnips_Web Search and States with Responses API  OpenAI Cookbook (1).md
+[2025-03-17 18:49:01] AI generated filename: 2025-03-17-web-search-and-states-responses-api.md
+[2025-03-17 18:49:01] Processing file from original location: C:\Users\jimmy\Downloads\MarkSnips\Originals\MarkSnips_Web Search and States with Responses API  OpenAI Cookbook (1).md -> C:\Users\jimmy\Downloads\MarkSnips\Enhanced\2025-03-17-web-search-and-states-responses-api.md
+[2025-03-17 18:49:23] Removed original file from watch folder
+[2025-03-17 18:49:23] Successfully enhanced: MarkSnips_Web Search and States with Responses API  OpenAI Cookbook (1).md -> 2025-03-17-web-search-and-states-responses-api.md
+[2025-03-17 18:49:23] Notification displayed using Windows Forms
+[2025-03-17 18:49:23] File content accessed successfully
+[2025-03-17 18:49:23] Copied original file to: C:\Users\jimmy\Downloads\MarkSnips\Originals\Microsoft Open Source Developer Tools and More.md
+[2025-03-17 18:49:23] Requesting AI to generate filename for: Microsoft Open Source Developer Tools and More.md
+[2025-03-17 18:49:27] AI generated filename: 2025-03-17-microsoft-open-source-developer-tools.md
+[2025-03-17 18:49:27] Processing file from original location: C:\Users\jimmy\Downloads\MarkSnips\Originals\Microsoft Open Source Developer Tools and More.md -> C:\Users\jimmy\Downloads\MarkSnips\Enhanced\2025-03-17-microsoft-open-source-developer-tools.md
+[2025-03-17 18:50:16] Removed original file from watch folder
+[2025-03-17 18:50:16] Successfully enhanced: Microsoft Open Source Developer Tools and More.md -> 2025-03-17-microsoft-open-source-developer-tools.md
+[2025-03-17 18:50:16] Notification displayed using Windows Forms
+[2025-03-17 18:50:16] File content accessed successfully
+[2025-03-17 18:50:16] Copied original file to: C:\Users\jimmy\Downloads\MarkSnips\Originals\Nov 30, 2024 06-15-44 PM Entrata API OpenAPI Spec.md
+[2025-03-17 18:50:16] Requesting AI to generate filename for: Nov 30, 2024 06-15-44 PM Entrata API OpenAPI Spec.md
+[2025-03-17 18:50:22] AI generated filename: 2025-03-17-entrata-api-openapi-specification.md
+[2025-03-17 18:50:22] Processing file from original location: C:\Users\jimmy\Downloads\MarkSnips\Originals\Nov 30, 2024 06-15-44 PM Entrata API OpenAPI Spec.md -> C:\Users\jimmy\Downloads\MarkSnips\Enhanced\2025-03-17-entrata-api-openapi-specification.md
+[2025-03-17 18:50:52] Removed original file from watch folder
+[2025-03-17 18:50:52] Successfully enhanced: Nov 30, 2024 06-15-44 PM Entrata API OpenAPI Spec.md -> 2025-03-17-entrata-api-openapi-specification.md
+[2025-03-17 18:50:52] Notification displayed using Windows Forms
+[2025-03-17 18:50:52] File content accessed successfully
+[2025-03-17 18:50:52] Copied original file to: C:\Users\jimmy\Downloads\MarkSnips\Originals\Perplexity - Review and Revise Email Draft and Support Documents.md
+[2025-03-17 18:50:52] Requesting AI to generate filename for: Perplexity - Review and Revise Email Draft and Support Documents.md
+[2025-03-17 18:50:57] AI generated filename: 2025-03-17-revised-email-draft-and-case-studies.md
+[2025-03-17 18:50:57] Processing file from original location: C:\Users\jimmy\Downloads\MarkSnips\Originals\Perplexity - Review and Revise Email Draft and Support Documents.md -> C:\Users\jimmy\Downloads\MarkSnips\Enhanced\2025-03-17-revised-email-draft-and-case-studies.md
+[2025-03-17 18:51:22] Removed original file from watch folder
+[2025-03-17 18:51:22] Successfully enhanced: Perplexity - Review and Revise Email Draft and Support Documents.md -> 2025-03-17-revised-email-draft-and-case-studies.md
+[2025-03-17 18:51:22] Notification displayed using Windows Forms
+[2025-03-17 18:51:23] File content accessed successfully
+[2025-03-17 18:51:23] Copied original file to: C:\Users\jimmy\Downloads\MarkSnips\Originals\Perplexity-GMH-Data-Model.md
+[2025-03-17 18:51:23] Requesting AI to generate filename for: Perplexity-GMH-Data-Model.md
+[2025-03-17 18:51:28] AI generated filename: 2025-03-17-data-model-design-gmh-communities.md
+[2025-03-17 18:51:28] Processing file from original location: C:\Users\jimmy\Downloads\MarkSnips\Originals\Perplexity-GMH-Data-Model.md -> C:\Users\jimmy\Downloads\MarkSnips\Enhanced\2025-03-17-data-model-design-gmh-communities.md
+[2025-03-17 18:52:18] Removed original file from watch folder
+[2025-03-17 18:52:18] Successfully enhanced: Perplexity-GMH-Data-Model.md -> 2025-03-17-data-model-design-gmh-communities.md
+[2025-03-17 18:52:19] Notification displayed using Windows Forms
+[2025-03-17 18:52:19] File content accessed successfully
+[2025-03-17 18:52:19] Copied original file to: C:\Users\jimmy\Downloads\MarkSnips\Originals\pre_lease_report_filter_params.md
+[2025-03-17 18:52:19] Requesting AI to generate filename for: pre_lease_report_filter_params.md
+[2025-03-17 18:52:24] AI generated filename: 2025-03-17-pre-lease-report-filters.md
+[2025-03-17 18:52:24] Processing file from original location: C:\Users\jimmy\Downloads\MarkSnips\Originals\pre_lease_report_filter_params.md -> C:\Users\jimmy\Downloads\MarkSnips\Enhanced\2025-03-17-pre-lease-report-filters.md
+[2025-03-17 18:52:41] Removed original file from watch folder
+[2025-03-17 18:52:41] Successfully enhanced: pre_lease_report_filter_params.md -> 2025-03-17-pre-lease-report-filters.md
+[2025-03-17 18:52:41] Notification displayed using Windows Forms
+[2025-03-17 18:52:41] File content accessed successfully
+[2025-03-17 18:52:41] Copied original file to: C:\Users\jimmy\Downloads\MarkSnips\Originals\Processing API Response Data in R Key Terms and a Practical Workflow Example.md
+[2025-03-17 18:52:41] Requesting AI to generate filename for: Processing API Response Data in R Key Terms and a Practical Workflow Example.md
+[2025-03-17 18:52:46] AI generated filename: 2025-03-17-processing-api-response-data-in-r.md
+[2025-03-17 18:52:46] Processing file from original location: C:\Users\jimmy\Downloads\MarkSnips\Originals\Processing API Response Data in R Key Terms and a Practical Workflow Example.md -> C:\Users\jimmy\Downloads\MarkSnips\Enhanced\2025-03-17-processing-api-response-data-in-r.md
+[2025-03-17 18:54:07] Removed original file from watch folder
+[2025-03-17 18:54:07] Successfully enhanced: Processing API Response Data in R Key Terms and a Practical Workflow Example.md -> 2025-03-17-processing-api-response-data-in-r.md
+[2025-03-17 18:54:07] Notification displayed using Windows Forms
+[2025-03-17 18:54:07] File content accessed successfully
+[2025-03-17 18:54:07] Copied original file to: C:\Users\jimmy\Downloads\MarkSnips\Originals\provide code refactoring _ refinement suggestions.md
+[2025-03-17 18:54:07] Requesting AI to generate filename for: provide code refactoring _ refinement suggestions.md
+[2025-03-17 18:54:12] AI generated filename: 2025-03-17-code-refactoring-suggestions-r.md
+[2025-03-17 18:54:12] Processing file from original location: C:\Users\jimmy\Downloads\MarkSnips\Originals\provide code refactoring _ refinement suggestions.md -> C:\Users\jimmy\Downloads\MarkSnips\Enhanced\2025-03-17-code-refactoring-suggestions-r.md
+[2025-03-17 18:54:33] Removed original file from watch folder
+[2025-03-17 18:54:33] Successfully enhanced: provide code refactoring _ refinement suggestions.md -> 2025-03-17-code-refactoring-suggestions-r.md
+[2025-03-17 18:54:34] Notification displayed using Windows Forms
+[2025-03-17 18:54:34] File content accessed successfully
+[2025-03-17 18:54:34] Copied original file to: C:\Users\jimmy\Downloads\MarkSnips\Originals\R Excel Packages.md
+[2025-03-17 18:54:34] Requesting AI to generate filename for: R Excel Packages.md
+[2025-03-17 18:54:38] AI generated filename: 2025-03-17-r-excel-packages.md
+[2025-03-17 18:54:38] Processing file from original location: C:\Users\jimmy\Downloads\MarkSnips\Originals\R Excel Packages.md -> C:\Users\jimmy\Downloads\MarkSnips\Enhanced\2025-03-17-r-excel-packages.md
+[2025-03-17 18:54:47] Removed original file from watch folder
+[2025-03-17 18:54:47] Successfully enhanced: R Excel Packages.md -> 2025-03-17-r-excel-packages.md
+[2025-03-17 18:54:47] Notification displayed using Windows Forms
+[2025-03-17 18:54:47] Skipping processing for: README.md
+[2025-03-17 18:54:47] File content accessed successfully
+[2025-03-17 18:54:47] Copied original file to: C:\Users\jimmy\Downloads\MarkSnips\Originals\repomix-output-noclocks-cspr.md
+[2025-03-17 18:54:47] Requesting AI to generate filename for: repomix-output-noclocks-cspr.md
+[2025-03-17 18:54:52] AI generated filename: 2025-03-17-main-topic-summary-document.md
+[2025-03-17 18:54:52] Processing file from original location: C:\Users\jimmy\Downloads\MarkSnips\Originals\repomix-output-noclocks-cspr.md -> C:\Users\jimmy\Downloads\MarkSnips\Enhanced\2025-03-17-main-topic-summary-document.md
+[2025-03-17 18:54:52] Original file no longer exists in watch folder
+[2025-03-17 18:54:52] Successfully enhanced: repomix-output-noclocks-cspr.md -> 2025-03-17-main-topic-summary-document.md
+[2025-03-17 18:54:52] Notification displayed using Windows Forms
+[2025-03-17 18:54:52] File content accessed successfully
+[2025-03-17 18:54:52] Copied original file to: C:\Users\jimmy\Downloads\MarkSnips\Originals\specCrawler.md
+[2025-03-17 18:54:52] Requesting AI to generate filename for: specCrawler.md
+[2025-03-17 18:54:57] AI generated filename: 2025-03-17-specrawler-openapi-generation-llms.md
+[2025-03-17 18:54:57] Processing file from original location: C:\Users\jimmy\Downloads\MarkSnips\Originals\specCrawler.md -> C:\Users\jimmy\Downloads\MarkSnips\Enhanced\2025-03-17-specrawler-openapi-generation-llms.md
+[2025-03-17 18:55:31] Removed original file from watch folder
+[2025-03-17 18:55:31] Successfully enhanced: specCrawler.md -> 2025-03-17-specrawler-openapi-generation-llms.md
+[2025-03-17 18:55:31] Notification displayed using Windows Forms
+[2025-03-17 18:55:31] File content accessed successfully
+[2025-03-17 18:55:31] Copied original file to: C:\Users\jimmy\Downloads\MarkSnips\Originals\Support Documents Company Overview and Case Studies.md
+[2025-03-17 18:55:31] Requesting AI to generate filename for: Support Documents Company Overview and Case Studies.md
+[2025-03-17 18:55:36] AI generated filename: 2025-03-17-support-documents-company-overview.md
+[2025-03-17 18:55:36] Processing file from original location: C:\Users\jimmy\Downloads\MarkSnips\Originals\Support Documents Company Overview and Case Studies.md -> C:\Users\jimmy\Downloads\MarkSnips\Enhanced\2025-03-17-support-documents-company-overview.md
+[2025-03-17 18:55:49] Removed original file from watch folder
+[2025-03-17 18:55:49] Successfully enhanced: Support Documents Company Overview and Case Studies.md -> 2025-03-17-support-documents-company-overview.md
+[2025-03-17 18:55:49] Notification displayed using Windows Forms
+[2025-03-17 18:55:49] File content accessed successfully
+[2025-03-17 18:55:49] Copied original file to: C:\Users\jimmy\Downloads\MarkSnips\Originals\Text generation and prompting - OpenAI API.md
+[2025-03-17 18:55:49] Requesting AI to generate filename for: Text generation and prompting - OpenAI API.md
+[2025-03-17 18:55:56] AI generated filename: 2025-03-17-prompting-large-language-models.md
+[2025-03-17 18:55:56] Processing file from original location: C:\Users\jimmy\Downloads\MarkSnips\Originals\Text generation and prompting - OpenAI API.md -> C:\Users\jimmy\Downloads\MarkSnips\Enhanced\2025-03-17-prompting-large-language-models.md
+[2025-03-17 18:56:23] Removed original file from watch folder
+[2025-03-17 18:56:23] Successfully enhanced: Text generation and prompting - OpenAI API.md -> 2025-03-17-prompting-large-language-models.md
+[2025-03-17 18:56:23] Notification displayed using Windows Forms
+[2025-03-17 18:56:23] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 18:56:23] New file detected: README.md
+[2025-03-17 18:56:23] Skipping processing for: README.md
+[2025-03-17 18:56:28] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 18:56:33] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 18:56:38] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 18:56:43] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 18:56:48] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 18:56:53] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 18:56:58] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 18:57:03] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 18:57:08] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 18:57:13] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 18:57:18] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 18:57:23] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 18:57:28] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 18:57:33] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 18:57:38] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 18:57:43] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 18:57:48] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 18:57:53] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 18:57:58] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 18:58:03] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 18:58:08] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 18:58:13] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 18:58:18] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 18:58:23] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 18:58:28] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 18:58:33] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 18:58:38] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 18:58:43] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 18:58:48] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 18:58:53] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 18:58:58] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 18:59:03] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 18:59:08] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 18:59:13] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 18:59:18] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 18:59:23] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 18:59:28] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 18:59:33] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 18:59:38] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 18:59:43] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 18:59:48] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 18:59:53] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 18:59:58] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:00:03] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:00:03] Watcher still active... (heartbeat check)
+[2025-03-17 19:00:08] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:00:08] Watcher still active... (heartbeat check)
+[2025-03-17 19:00:13] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:00:18] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:00:23] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:00:28] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:00:33] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:00:38] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:00:43] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:00:48] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:00:53] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:00:58] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:01:03] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:01:08] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:01:13] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:01:18] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:01:23] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:01:28] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:01:33] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:01:38] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:01:43] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:01:48] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:01:53] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:01:58] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:02:03] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:02:09] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:02:14] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:02:19] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:02:24] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:02:29] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:02:34] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:02:39] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:02:44] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:02:49] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:02:54] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:02:59] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:03:04] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:03:09] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:03:14] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:03:19] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:03:24] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:03:29] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:03:34] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:03:39] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:03:44] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:03:49] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:03:54] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:03:59] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:04:04] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:04:09] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:04:14] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:04:19] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:04:24] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:04:29] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:04:34] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:04:39] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:04:44] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:04:49] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:04:54] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:04:59] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:05:04] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:05:04] Watcher still active... (heartbeat check)
+[2025-03-17 19:05:09] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:05:09] Watcher still active... (heartbeat check)
+[2025-03-17 19:05:14] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:05:19] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:05:24] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:05:29] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:05:34] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:05:39] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:05:44] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:05:49] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:05:54] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:05:59] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:06:04] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:06:09] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:06:14] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:06:19] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:06:24] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:06:29] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:06:34] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:06:39] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:06:44] Checking for new files. Found 2 files in watch folder.
+[2025-03-17 19:06:44] New file detected: CHANGELOG.md
+[2025-03-17 19:06:44] File content accessed successfully
+[2025-03-17 19:06:44] Copied original file to: C:\Users\jimmy\Downloads\MarkSnips\Originals\CHANGELOG.md
+[2025-03-17 19:06:44] Requesting AI to generate filename for: CHANGELOG.md
+[2025-03-17 19:06:49] AI generated filename: 2025-03-17-main-topic-summary-guide.md
+[2025-03-17 19:06:49] Processing file from original location: C:\Users\jimmy\Downloads\MarkSnips\Originals\CHANGELOG.md -> C:\Users\jimmy\Downloads\MarkSnips\Enhanced\2025-03-17-main-topic-summary-guide.md
+[2025-03-17 19:06:55] Removed original file from watch folder
+[2025-03-17 19:06:55] Successfully enhanced: CHANGELOG.md -> 2025-03-17-main-topic-summary-guide.md
+[2025-03-17 19:06:55] Notification displayed using Windows Forms
+[2025-03-17 19:07:00] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:07:05] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:07:10] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:07:15] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:07:20] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:07:25] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:07:30] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:07:35] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:07:40] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:07:45] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:07:50] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:07:55] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:08:00] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:08:05] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:08:10] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:08:15] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:08:20] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:08:25] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:08:30] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:08:35] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:08:40] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:08:45] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:08:50] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:08:52] === Starting file watcher ===
+[2025-03-17 19:08:52] Monitoring folder: C:\Users\jimmy\Downloads\MarkSnips
+[2025-03-17 19:08:52] Log file: C:\Users\jimmy\Downloads\MarkSnips\Logs\watcher.log
+[2025-03-17 19:08:52] Config file: C:\Users\jimmy\Downloads\MarkSnips\config.json
+[2025-03-17 19:08:52] Starting polling-based file watcher
+[2025-03-17 19:08:52] Notification displayed: Markdown Watcher Active - Monitoring for new files in: C:\Users\jimmy\Downloads\MarkSnips
+[2025-03-17 19:08:52] Performing scheduled backup
+[2025-03-17 19:08:54] Backup created: C:\Users\jimmy\Downloads\MarkSnips\Backups\MarkSnips_Backup_2025-03-17_19-08-52.zip
+[2025-03-17 19:08:54] Found 1 existing files to process on startup
+[2025-03-17 19:08:54] Skipping processing for: README.md
+[2025-03-17 19:08:54] New file detected: README.md
+[2025-03-17 19:08:54] Skipping processing for: README.md
+[2025-03-17 19:08:55] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:09:00] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:09:05] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:09:10] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:09:15] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:09:17] File monitoring stopped.
+[2025-03-17 19:09:17] Notification displayed: Markdown Watcher Stopped - File monitoring has been stopped.
+[2025-03-17 19:09:20] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:09:25] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:09:30] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:09:35] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:09:40] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:09:45] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:09:50] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:09:55] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:10:00] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:10:00] Watcher still active... (heartbeat check)
+[2025-03-17 19:10:05] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:10:05] Watcher still active... (heartbeat check)
+[2025-03-17 19:10:10] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:10:15] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:10:20] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:10:25] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:10:30] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:10:35] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:10:40] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:10:45] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:10:50] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:10:55] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:11:00] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:11:05] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:11:10] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:11:15] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:11:20] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:11:25] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:11:30] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:11:36] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:11:41] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:11:46] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:11:51] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:11:56] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:12:01] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:12:06] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:12:11] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:12:16] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:12:21] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:12:26] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:12:31] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:12:36] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:12:41] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:12:46] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:12:51] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:12:56] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:13:01] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:13:06] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:13:11] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:13:16] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:13:21] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:13:26] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:13:31] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:13:36] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:13:41] Checking for new files. Found 1 files in watch folder.
+[2025-03-17 19:13:46] Checking for new files. Found 2 files in watch folder.
+[2025-03-17 19:13:51] Checking for new files. Found 2 files in watch folder.
+[2025-03-17 19:13:56] Checking for new files. Found 2 files in watch folder.
+[2025-03-17 19:14:01] Checking for new files. Found 2 files in watch folder.
+[2025-03-17 19:14:06] Checking for new files. Found 2 files in watch folder.
+[2025-03-17 19:14:11] Checking for new files. Found 2 files in watch folder.
+[2025-03-17 19:14:16] Checking for new files. Found 2 files in watch folder.
+[2025-03-17 19:14:21] Checking for new files. Found 2 files in watch folder.
+[2025-03-17 19:14:26] Checking for new files. Found 2 files in watch folder.
