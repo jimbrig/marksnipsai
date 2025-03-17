@@ -1,4 +1,4 @@
-﻿# File: ~/Downloads/MarkSnips/Source/watch.ps1
+# File: ~/Downloads/MarkSnips/Source/watch.ps1
 
 <#
 .SYNOPSIS

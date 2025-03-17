@@ -1,4 +1,4 @@
-﻿# File: ~/Downloads/MarkSnips/Source/enhance.ps1
+# File: ~/Downloads/MarkSnips/Source/enhance.ps1
 
 Function Invoke-AIEnhanceMarkdown {
     <#

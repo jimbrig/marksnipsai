@@ -1,4 +1,4 @@
-﻿# File: ~/Downloads/MarkSnips/Source/config.ps1
+# File: ~/Downloads/MarkSnips/Source/config.ps1
 
 <#
 .SYNOPSIS
