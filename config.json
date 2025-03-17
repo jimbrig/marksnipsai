@@ -1,0 +1,35 @@
+{
+  "Backup": {
+    "LastBackup": "2025-03-17T19:08:54.3305688-04:00",
+    "BackupInterval": 24,
+    "MaxBackupSets": 5,
+    "Enabled": true
+  },
+  "Files": {
+    "LogFile": "C:\\Users\\jimmy\\Downloads\\MarkSnips\\Logs\\watcher.log",
+    "ConfigFile": "C:\\Users\\jimmy\\Downloads\\MarkSnips\\config.json"
+  },
+  "Folders": {
+    "Enhanced": "C:\\Users\\jimmy\\Downloads\\MarkSnips\\Enhanced",
+    "Backups": "C:\\Users\\jimmy\\Downloads\\MarkSnips\\Backups",
+    "Originals": "C:\\Users\\jimmy\\Downloads\\MarkSnips\\Originals",
+    "Logs": "C:\\Users\\jimmy\\Downloads\\MarkSnips\\Logs",
+    "Base": "C:\\Users\\jimmy\\Downloads\\MarkSnips"
+  },
+  "AIPrompts": {
+    "FilenamePrompt": "Please create a concise, descriptive filename for this markdown document.\r\nThe filename should:\r\n1. Clearly summarize the main topic of the document\r\n2. Be between 3-7 words\r\n3. Use only lowercase letters, numbers, and hyphens (no spaces)\r\n4. End with .md extension\r\n5. Be a clean, SEO-friendly URL slug\r\n\r\nHere's the document content:\r\n\r\n`markdown\r\n{content}\r\n`\r\n\r\nRespond with ONLY the filename and nothing else.",
+    "EnhancementPrompt": "Take the following markdown content and restructure it for better readability, formatting, and consistency:\r\n\r\n`markdown\r\n{content}\r\n`\r"
+  },
+  "Notifications": {
+    "ShowErrorNotifications": true,
+    "ShowSuccessNotifications": true,
+    "Enabled": true
+  },
+  "Watcher": {
+    "FileTrackingExpiration": 60,
+    "FileFilter": "*.md",
+    "ProcessingDelay": 2,
+    "HeartbeatInterval": 5,
+    "PollingInterval": 5
+  }
+}
