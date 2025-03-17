@@ -1,5 +1,9 @@
 # MarkSnips: AI Markdown Enhancement Tool
 
+<!-- BADGES:START -->
+[![Automate Changelog](https://github.com/jimbrig/marksnipsai/actions/workflows/changelog.yml/badge.svg)](https://github.com/jimbrig/marksnipsai/actions/workflows/changelog.yml)
+<!-- BADGES:END -->
+
 MarkSnips is a PowerShell-based tool that automatically enhances markdown files created from web page snippets. It uses OpenAI's API to improve formatting, structure, and readability, while also intelligently renaming files based on their content.
 
 ## Features
