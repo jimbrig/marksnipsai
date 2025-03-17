@@ -8,6 +8,7 @@
 
 ## Configuration
 
+- Remove ignored file from cache ([5b80a3f](https://github.com/jimbrig/marksnipsai/commit/5b80a3f8c820dde3c3592778df74d15c8910ab72))  - (Jimmy Briggs)
 - Add various configs ([1cf3ba0](https://github.com/jimbrig/marksnipsai/commit/1cf3ba0a6d2c0abdfcf00fb5b8fab4062f3c562e))  - (Jimmy Briggs)
 
 ## Documentation
@@ -16,6 +17,7 @@
 
 ## Features
 
+- Ignore logs add example.log ([98b9fc1](https://github.com/jimbrig/marksnipsai/commit/98b9fc12fb1fdae0436dcc71f7488e0b9bce25eb))  - (Jimmy Briggs)
 - Add source code ([090fda4](https://github.com/jimbrig/marksnipsai/commit/090fda4c942f17107ce2f3d77154ecef88ed78f0))  - (Jimmy Briggs)
 - Add main runner ([bae3605](https://github.com/jimbrig/marksnipsai/commit/bae3605c9ee2f0fb0ddb18921472bff75a8d0d27))  - (Jimmy Briggs)
 - Add logs ([25c86a1](https://github.com/jimbrig/marksnipsai/commit/25c86a10f1018de81cc0245a9683f13851e44eb6))  - (Jimmy Briggs)
