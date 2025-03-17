@@ -1,28 +1,61 @@
 ﻿# File: ~/Downloads/MarkSnips/Source/watch.ps1
+[CmdletBinding(SupportsShouldProcess = $true)]
 param(
-    [string]$FolderToWatch = "$env:USERPROFILE\Downloads\MarkSnips",
-    [string]$FileFilter = "*.md",
-    [switch]$VerboseLogging
+    [Parameter(Mandatory = $false)]
+    [string]$ConfigPath = "$env:USERPROFILE\Downloads\MarkSnips\config.json",
+    
+    [Parameter(Mandatory = $false)]
+    [switch]$BackupNow
 )
 
-# Import the enhancement script - getting the path correctly
-$enhanceScriptPath = Join-Path $PSScriptRoot "enhance.ps1"
-. $enhanceScriptPath
+# Import required scripts
+$scriptRoot = $PSScriptRoot
+$configModule = Join-Path $scriptRoot "config.ps1"
+$enhanceModule = Join-Path $scriptRoot "enhance.ps1"
+
+# Source the scripts
+. $configModule
+. $enhanceModule
 
 # Import PSAI module
 Import-Module PSAI
 
-# Define folder structure
-$baseFolder = $FolderToWatch
-$originalFolder = Join-Path $baseFolder "Originals"
-$enhancedFolder = Join-Path $baseFolder "Enhanced"
+# Load or initialize configuration
+$config = Import-MarkSnipsConfig -ConfigPath $ConfigPath
+if (-not $config) {
+    $config = Initialize-MarkSnipsConfig -ConfigPath $ConfigPath
+    Write-Host "Created new configuration file at $ConfigPath" -ForegroundColor Green
+}
 
-# Log file for monitoring events
-$logDir = Join-Path $baseFolder "Logs"
+# Extract configuration values
+$baseFolder = $config.Folders.Base
+$originalFolder = $config.Folders.Originals
+$enhancedFolder = $config.Folders.Enhanced
+$logDir = $config.Folders.Logs
+$logFile = $config.Files.LogFile
+$fileFilter = $config.Watcher.FileFilter
+$pollingInterval = $config.Watcher.PollingInterval
+$heartbeatInterval = $config.Watcher.HeartbeatInterval
+$processingDelay = $config.Watcher.ProcessingDelay
+$fileTrackingExpiration = $config.Watcher.FileTrackingExpiration
+
+# Run immediate backup if requested
+if ($BackupNow) {
+    if ($PSCmdlet.ShouldProcess("MarkSnips data", "Create backup")) {
+        Write-Host "Creating backup..." -ForegroundColor Yellow
+        $backupPath = Backup-MarkSnipsData -Config $config
+        if ($backupPath) {
+            Write-Host "Backup created successfully at: $backupPath" -ForegroundColor Green
+        } else {
+            Write-Host "Backup failed" -ForegroundColor Red
+        }
+    }
+}
+
+# Ensure log directory exists
 if (-not (Test-Path $logDir)) {
     New-Item -Path $logDir -ItemType Directory -Force | Out-Null
 }
-$logFile = Join-Path $logDir "watcher.log"
 
 function Write-Log {
     param(
@@ -44,6 +77,7 @@ function Write-Log {
         Write-Host $logMessage -ForegroundColor Yellow
     } else {
         Write-Host $logMessage
+        Write-Verbose $Message
     }
 }
 
@@ -52,6 +86,21 @@ function Show-Notification {
         [string]$Title,
         [string]$Message
     )
+    
+    # Check if notifications are enabled in config
+    if (-not $config.Notifications.Enabled) {
+        return
+    }
+    
+    # For success notifications, check if they're enabled
+    if ($Title -like "*Success*" -and -not $config.Notifications.ShowSuccessNotifications) {
+        return
+    }
+    
+    # For error notifications, check if they're enabled
+    if ($Title -like "*Error*" -and -not $config.Notifications.ShowErrorNotifications) {
+        return
+    }
     
     try {
         # Try Windows 10/11 notification API
@@ -65,7 +114,7 @@ function Show-Notification {
         
         # Force garbage collection to prevent icon persisting
         [System.GC]::Collect()
-        Write-Log "Notification displayed using Windows Forms"
+        Write-Log "Notification displayed: $Title - $Message"
     } catch {
         Write-Log "Failed to display notification: $($_.Exception.Message)" -Warning
     }
@@ -81,24 +130,8 @@ function Get-AIGeneratedFileName {
         # Read the content of the file
         $fileContent = Get-Content -Path $FilePath -Raw
         
-        # Prepare a prompt for AI to generate a descriptive filename
-        $prompt = @"
-Please create a concise, descriptive filename for this markdown document.
-The filename should:
-1. Clearly summarize the main topic of the document
-2. Be between 3-7 words
-3. Use only lowercase letters, numbers, and hyphens (no spaces)
-4. End with .md extension
-5. Be a clean, SEO-friendly URL slug
-
-Here's the document content:
-
-\`\`\`markdown
-$fileContent
-\`\`\`
-
-Respond with ONLY the filename and nothing else.
-"@
+        # Get the filename prompt from config and replace the content placeholder
+        $prompt = $config.AIPrompts.FilenamePrompt -replace '\{content\}', $fileContent
         
         Write-Log "Requesting AI to generate filename for: $OriginalName"
         
@@ -137,6 +170,7 @@ Respond with ONLY the filename and nothing else.
 }
 
 function Process-MarkdownFile {
+    [CmdletBinding(SupportsShouldProcess = $true)]
     param(
         [string]$FilePath
     )
@@ -145,6 +179,7 @@ function Process-MarkdownFile {
     
     # Skip files that appear to be enhanced versions or in subdirectories
     if ($name -like "README.md" -or
+        $name -like "CHANGELOG.md" -or
         $name -like "*-enhanced.md" -or 
         $name -like "*.backup.md" -or 
         $FilePath -like "*\Enhanced\*" -or 
@@ -152,6 +187,10 @@ function Process-MarkdownFile {
         $name -eq "watcher-test-file.tmp") {
         
         Write-Log "Skipping processing for: $name"
+        return
+    }
+    
+    if (-not $PSCmdlet.ShouldProcess($name, "Process markdown file")) {
         return
     }
     
@@ -171,8 +210,33 @@ function Process-MarkdownFile {
         
         Write-Log "Processing file from original location: $originalPath -> $enhancedPath"
         
+        # Get the enhancement prompt from config and replace the content placeholder
+        $prompt = $config.AIPrompts.EnhancementPrompt -replace '\{content\}', $fileContent
+        
         # Call the enhancement function
-        Invoke-AIEnhanceMarkdown -InputFile $originalPath -OutputFile $enhancedPath
+        $enhancedContent = Invoke-OAIChat $prompt
+        
+        # Process the response - strip code fences
+        $enhancedLines = $enhancedContent.Split("`n")
+        $startIndex = 0
+        $endIndex = $enhancedLines.Length - 1
+        
+        # Check for code fences
+        if ($enhancedLines[0] -match "^```markdown" -or $enhancedLines[0] -match "^```$") {
+            $startIndex = 1
+        }
+        if ($enhancedLines[$endIndex] -match "^```$") {
+            $endIndex -= 1
+        }
+        
+        # Join without code fences
+        $cleanContent = $enhancedLines[$startIndex..$endIndex] -join "`n"
+        
+        # Create output file
+        if (Test-Path $enhancedPath) {
+            Remove-Item $enhancedPath -Force
+        }
+        Set-Content -Path $enhancedPath -Value $cleanContent -Force
         
         # Now remove the original from the watch folder
         if (Test-Path $FilePath) {
@@ -189,16 +253,16 @@ function Process-MarkdownFile {
         
         return $true
     } catch {
-        Write-Log "ERROR processing $name : $($_.Exception.Message)" -IsError
+        Write-Log "ERROR processing $name`: $($_.Exception.Message)" -IsError
         Show-Notification -Title "Enhancement Error" -Message "Failed to process: $name"
         return $false
     }
 }
 
-# Ensure folders exist - very explicitly
-try {
-    foreach ($folder in @($baseFolder, $originalFolder, $enhancedFolder)) {
-        if (-not (Test-Path $folder)) {
+# Ensure folders exist
+foreach ($folder in @($baseFolder, $originalFolder, $enhancedFolder, $logDir)) {
+    if (-not (Test-Path $folder)) {
+        if ($PSCmdlet.ShouldProcess($folder, "Create folder")) {
             Write-Log "Creating folder: $folder"
             New-Item -Path $folder -ItemType Directory -Force | Out-Null
             
@@ -208,32 +272,58 @@ try {
             } else {
                 Write-Log "Failed to create folder: $folder" -IsError
             }
-        } else {
-            Write-Log "Folder already exists: $folder"
         }
+    } else {
+        Write-Verbose "Folder already exists: $folder"
     }
-} catch {
-    Write-Log "ERROR creating folders: $($_.Exception.Message)" -IsError
 }
 
 Write-Log "=== Starting file watcher ==="
-Write-Log "Monitoring folder: $FolderToWatch"
+Write-Log "Monitoring folder: $baseFolder"
 Write-Log "Log file: $logFile"
-Write-Log "Enhancement script: $enhanceScriptPath"
+Write-Log "Config file: $ConfigPath"
 
 # Write the correct paths to confirm they're working
-Write-Log "Current folder ($PWD): $PWD"
-Write-Log "PSScriptRoot: $PSScriptRoot"
-Write-Log "Base folder: $baseFolder"
-Write-Log "Enhanced folder: $enhancedFolder"
-Write-Log "Originals folder: $originalFolder"
+Write-Verbose "Current folder ($PWD): $PWD"
+Write-Verbose "PSScriptRoot: $PSScriptRoot"
+Write-Verbose "Base folder: $baseFolder"
+Write-Verbose "Enhanced folder: $enhancedFolder"
+Write-Verbose "Originals folder: $originalFolder"
 
 # Starting polling-based watcher
 Write-Log "Starting polling-based file watcher"
-Show-Notification -Title "Markdown Watcher Active" -Message "Monitoring for new files in: $FolderToWatch"
+Show-Notification -Title "Markdown Watcher Active" -Message "Monitoring for new files in: $baseFolder"
+
+# Check if backup is needed on startup
+if ($config.Backup.Enabled) {
+    $lastBackup = $config.Backup.LastBackup
+    $backupNeeded = $false
+    
+    if (-not $lastBackup) {
+        $backupNeeded = $true
+    } else {
+        $lastBackupTime = [datetime]::Parse($lastBackup)
+        $nextBackupTime = $lastBackupTime.AddHours($config.Backup.BackupInterval)
+        if ((Get-Date) -gt $nextBackupTime) {
+            $backupNeeded = $true
+        }
+    }
+    
+    if ($backupNeeded) {
+        if ($PSCmdlet.ShouldProcess("MarkSnips data", "Perform scheduled backup")) {
+            Write-Log "Performing scheduled backup"
+            $backupFile = Backup-MarkSnipsData -Config $config
+            if ($backupFile) {
+                Write-Log "Backup created: $backupFile"
+            } else {
+                Write-Log "Backup failed" -IsError
+            }
+        }
+    }
+}
 
 # Process existing files on startup
-$existingFiles = Get-ChildItem -Path $FolderToWatch -Filter $FileFilter | 
+$existingFiles = Get-ChildItem -Path $baseFolder -Filter $fileFilter -File | 
     Where-Object { $_.FullName -notlike "*\Enhanced\*" -and $_.FullName -notlike "*\Originals\*" }
 
 if ($existingFiles.Count -gt 0) {
@@ -251,11 +341,12 @@ try {
     # Main monitoring loop
     while ($true) {
         # Get current files in the watch folder
-        $currentFiles = Get-ChildItem -Path $FolderToWatch -Filter $FileFilter | 
+        $currentFiles = Get-ChildItem -Path $baseFolder -Filter $fileFilter -File | 
             Where-Object { $_.FullName -notlike "*\Enhanced\*" -and $_.FullName -notlike "*\Originals\*" }
         
-        if ($VerboseLogging -or $currentFiles.Count -gt 0) {
-            Write-Log "Checking for new files. Found $($currentFiles.Count) files in watch folder."
+        # Log file count but only when verbose or files exist
+        if ($VerbosePreference -eq 'Continue' -or $currentFiles.Count -gt 0) {
+            Write-Verbose "Checking for new files. Found $($currentFiles.Count) files in watch folder."
         }
         
         # Process any new files
@@ -272,25 +363,23 @@ try {
             }
         }
         
-        # Clean up processed files list (remove entries older than 1 hour)
-        $cutoffTime = (Get-Date).AddHours(-1)
+        # Clean up processed files list (remove entries older than tracking expiration)
+        $cutoffTime = (Get-Date).AddMinutes(-$fileTrackingExpiration)
         $keysToRemove = $processedFiles.Keys | Where-Object { $processedFiles[$_] -lt $cutoffTime }
         
         foreach ($key in $keysToRemove) {
             $processedFiles.Remove($key)
-            if ($VerboseLogging) {
-                Write-Log "Removed old entry from processed files tracking: $key"
-            }
+            Write-Verbose "Removed old entry from processed files tracking: $key"
         }
         
-        # Heartbeat logging (every 5 minutes)
+        # Heartbeat logging
         $currentMinute = (Get-Date).Minute
-        if ($currentMinute % 5 -eq 0 -and (Get-Date).Second -lt 10) {
+        if ($currentMinute % $heartbeatInterval -eq 0 -and (Get-Date).Second -lt 10) {
             Write-Log "Watcher still active... (heartbeat check)"
         }
         
-        # Sleep to prevent CPU overuse (check every 5 seconds)
-        Start-Sleep -Seconds 5
+        # Sleep to prevent CPU overuse
+        Start-Sleep -Seconds $pollingInterval
     }
 } finally {
     Write-Log "File monitoring stopped."
