@@ -1,7 +1,34 @@
-﻿# File: ~/Downloads/MarkSnips/Source/watch.ps1
+# File: ~/Downloads/MarkSnips/Source/watch.ps1
+
+<#
+.SYNOPSIS
+Monitors a folder for markdown files and processes them with AI-enhanced formatting.
+
+.DESCRIPTION
+This script watches a specified folder for new markdown files, enhances their formatting using AI,
+and organizes them into appropriate folders. It also supports backup and restore functionality.
+
+.PARAMETER ConfigPath
+Path to the configuration file. Defaults to config.json in the MarkSnips directory.
+
+.PARAMETER BackupNow
+If specified, creates a backup immediately upon startup.
+
+.EXAMPLE
+.\watch.ps1
+Starts the file watcher with default settings.
+
+.EXAMPLE
+.\watch.ps1 -ConfigPath "C:\custom-config.json" -BackupNow
+Starts the file watcher with a custom configuration and creates an immediate backup.
+
+.NOTES
+Requires the PSAI module and proper configuration to be set up.
+#>
 [CmdletBinding(SupportsShouldProcess = $true)]
 param(
     [Parameter(Mandatory = $false)]
+    [ValidateScript({ Test-Path $_ -IsValid })]
     [string]$ConfigPath = "$env:USERPROFILE\Downloads\MarkSnips\config.json",
     
     [Parameter(Mandatory = $false)]
@@ -13,16 +40,30 @@ $scriptRoot = $PSScriptRoot
 $configModule = Join-Path $scriptRoot "config.ps1"
 $enhanceModule = Join-Path $scriptRoot "enhance.ps1"
 
+# Validate script paths
+if (-not (Test-Path $configModule -PathType Leaf)) {
+    throw "Configuration module not found at: $configModule"
+}
+
+if (-not (Test-Path $enhanceModule -PathType Leaf)) {
+    throw "Enhancement module not found at: $enhanceModule"
+}
+
 # Source the scripts
 . $configModule
 . $enhanceModule
 
 # Import PSAI module
-Import-Module PSAI
+try {
+    Import-Module PSAI -ErrorAction Stop
+} catch {
+    throw "Failed to import PSAI module: $($_.Exception.Message). Please ensure it's installed with: Install-Module PSAI -Scope CurrentUser"
+}
 
 # Load or initialize configuration
 $config = Import-MarkSnipsConfig -ConfigPath $ConfigPath
 if (-not $config) {
+    Write-Verbose "No configuration found, initializing default configuration"
     $config = Initialize-MarkSnipsConfig -ConfigPath $ConfigPath
     Write-Host "Created new configuration file at $ConfigPath" -ForegroundColor Green
 }
@@ -39,6 +80,13 @@ $heartbeatInterval = $config.Watcher.HeartbeatInterval
 $processingDelay = $config.Watcher.ProcessingDelay
 $fileTrackingExpiration = $config.Watcher.FileTrackingExpiration
 
+# Validate critical paths
+foreach ($path in @($baseFolder, $originalFolder, $enhancedFolder, $logDir)) {
+    if (-not (Test-Path $path -IsValid)) {
+        throw "Invalid path in configuration: $path"
+    }
+}
+
 # Run immediate backup if requested
 if ($BackupNow) {
     if ($PSCmdlet.ShouldProcess("MarkSnips data", "Create backup")) {
@@ -54,13 +102,21 @@ if ($BackupNow) {
 
 # Ensure log directory exists
 if (-not (Test-Path $logDir)) {
-    New-Item -Path $logDir -ItemType Directory -Force | Out-Null
+    if ($PSCmdlet.ShouldProcess($logDir, "Create log directory")) {
+        New-Item -Path $logDir -ItemType Directory -Force | Out-Null
+        Write-Verbose "Created log directory: $logDir"
+    }
 }
 
 function Write-Log {
     param(
+        [Parameter(Mandatory = $true)]
         [string]$Message,
+        
+        [Parameter(Mandatory = $false)]
         [switch]$Warning,
+        
+        [Parameter(Mandatory = $false)]
         [switch]$IsError
     )
     
@@ -83,7 +139,10 @@ function Write-Log {
 
 function Show-Notification {
     param(
+        [Parameter(Mandatory = $true)]
         [string]$Title,
+        
+        [Parameter(Mandatory = $true)]
         [string]$Message
     )
     
@@ -122,21 +181,35 @@ function Show-Notification {
 
 function Get-AIGeneratedFileName {
     param(
+        [Parameter(Mandatory = $true)]
+        [ValidateScript({ Test-Path $_ -PathType Leaf })]
         [string]$FilePath,
+        
+        [Parameter(Mandatory = $true)]
         [string]$OriginalName
     )
     
     try {
         # Read the content of the file
-        $fileContent = Get-Content -Path $FilePath -Raw
+        $fileContent = Get-Content -Path $FilePath -Raw -ErrorAction Stop
+        
+        if ([string]::IsNullOrWhiteSpace($fileContent)) {
+            Write-Log "File is empty: $FilePath" -Warning
+            throw "File content is empty"
+        }
         
         # Get the filename prompt from config and replace the content placeholder
         $prompt = $config.AIPrompts.FilenamePrompt -replace '\{content\}', $fileContent
         
         Write-Log "Requesting AI to generate filename for: $OriginalName"
         
+        # Show progress
+        Write-Progress -Activity "Generating Filename" -Status "Analyzing content..."
+        
         # Call OpenAI to generate a filename
         $aiResponse = Invoke-OAIChat $prompt -ErrorAction Stop
+        
+        Write-Progress -Activity "Generating Filename" -Completed
         
         # Clean up the response (just in case it contains extra text)
         $aiFilename = $aiResponse.Trim()
@@ -156,6 +229,8 @@ function Get-AIGeneratedFileName {
         Write-Log "AI generated filename: $finalName"
         return $finalName
     } catch {
+        Write-Progress -Activity "Generating Filename" -Completed
+        
         # If AI rename fails, fall back to date-based naming
         Write-Log "Failed to generate AI filename: $($_.Exception.Message)" -Warning
         
@@ -172,6 +247,8 @@ function Get-AIGeneratedFileName {
 function Process-MarkdownFile {
     [CmdletBinding(SupportsShouldProcess = $true)]
     param(
+        [Parameter(Mandatory = $true)]
+        [ValidateScript({ Test-Path $_ -PathType Leaf })]
         [string]$FilePath
     )
     
@@ -196,7 +273,13 @@ function Process-MarkdownFile {
     
     try {
         # First make sure we have access to the file
-        $fileContent = Get-Content -Path $FilePath -Raw
+        $fileContent = Get-Content -Path $FilePath -Raw -ErrorAction Stop
+        
+        if ([string]::IsNullOrWhiteSpace($fileContent)) {
+            Write-Log "File is empty: $FilePath" -Warning
+            return
+        }
+        
         Write-Log "File content accessed successfully"
         
         # Copy to originals first
@@ -213,8 +296,13 @@ function Process-MarkdownFile {
         # Get the enhancement prompt from config and replace the content placeholder
         $prompt = $config.AIPrompts.EnhancementPrompt -replace '\{content\}', $fileContent
         
+        # Show progress
+        Write-Progress -Activity "Enhancing Markdown" -Status "Getting AI enhancements..."
+        
         # Call the enhancement function
-        $enhancedContent = Invoke-OAIChat $prompt
+        $enhancedContent = Invoke-OAIChat $prompt -ErrorAction Stop
+        
+        Write-Progress -Activity "Enhancing Markdown" -Status "Processing response..."
         
         # Process the response - strip code fences
         $enhancedLines = $enhancedContent.Split("`n")
@@ -232,11 +320,15 @@ function Process-MarkdownFile {
         # Join without code fences
         $cleanContent = $enhancedLines[$startIndex..$endIndex] -join "`n"
         
+        Write-Progress -Activity "Enhancing Markdown" -Status "Saving file..."
+        
         # Create output file
         if (Test-Path $enhancedPath) {
             Remove-Item $enhancedPath -Force
         }
         Set-Content -Path $enhancedPath -Value $cleanContent -Force
+        
+        Write-Progress -Activity "Enhancing Markdown" -Completed
         
         # Now remove the original from the watch folder
         if (Test-Path $FilePath) {
@@ -253,6 +345,7 @@ function Process-MarkdownFile {
         
         return $true
     } catch {
+        Write-Progress -Activity "Enhancing Markdown" -Completed
         Write-Log "ERROR processing $name`: $($_.Exception.Message)" -IsError
         Show-Notification -Title "Enhancement Error" -Message "Failed to process: $name"
         return $false
@@ -301,11 +394,15 @@ if ($config.Backup.Enabled) {
     
     if (-not $lastBackup) {
         $backupNeeded = $true
+        Write-Verbose "No previous backup detected, scheduling initial backup"
     } else {
         $lastBackupTime = [datetime]::Parse($lastBackup)
         $nextBackupTime = $lastBackupTime.AddHours($config.Backup.BackupInterval)
         if ((Get-Date) -gt $nextBackupTime) {
             $backupNeeded = $true
+            Write-Verbose "Backup interval exceeded, scheduling backup"
+        } else {
+            Write-Verbose "Next backup scheduled for: $nextBackupTime"
         }
     }
     
@@ -329,19 +426,38 @@ $existingFiles = Get-ChildItem -Path $baseFolder -Filter $fileFilter -File |
 if ($existingFiles.Count -gt 0) {
     Write-Log "Found $($existingFiles.Count) existing files to process on startup"
     
+    # Use a progress bar for processing existing files
+    $fileCounter = 0
+    $totalFiles = $existingFiles.Count
+    
     foreach ($file in $existingFiles) {
+        $fileCounter++
+        Write-Progress -Activity "Processing Existing Files" -Status "Processing $($file.Name)" -PercentComplete (($fileCounter / $totalFiles) * 100)
         Process-MarkdownFile -FilePath $file.FullName
     }
+    
+    Write-Progress -Activity "Processing Existing Files" -Completed
 }
 
 # Create a hashtable to keep track of processed files
 $processedFiles = @{}
 
+# Track file watcher statistics
+$watcherStats = @{
+    StartTime      = Get-Date
+    FilesProcessed = 0
+    SuccessCount   = 0
+    FailureCount   = 0
+    LastActivity   = $null
+}
+
 try {
     # Main monitoring loop
+    Write-Log "Entering main monitoring loop, checking for files every $pollingInterval seconds"
+    
     while ($true) {
         # Get current files in the watch folder
-        $currentFiles = Get-ChildItem -Path $baseFolder -Filter $fileFilter -File | 
+        $currentFiles = Get-ChildItem -Path $baseFolder -Filter $fileFilter -File -ErrorAction SilentlyContinue | 
             Where-Object { $_.FullName -notlike "*\Enhanced\*" -and $_.FullName -notlike "*\Originals\*" }
         
         # Log file count but only when verbose or files exist
@@ -357,9 +473,17 @@ try {
                 
                 # Add to processed files list
                 $processedFiles[$file.FullName] = (Get-Date)
+                $watcherStats.LastActivity = Get-Date
                 
                 # Process the file
-                Process-MarkdownFile -FilePath $file.FullName
+                $result = Process-MarkdownFile -FilePath $file.FullName
+                $watcherStats.FilesProcessed++
+                
+                if ($result) {
+                    $watcherStats.SuccessCount++
+                } else {
+                    $watcherStats.FailureCount++
+                }
             }
         }
         
@@ -375,13 +499,43 @@ try {
         # Heartbeat logging
         $currentMinute = (Get-Date).Minute
         if ($currentMinute % $heartbeatInterval -eq 0 -and (Get-Date).Second -lt 10) {
-            Write-Log "Watcher still active... (heartbeat check)"
+            # Calculate uptime
+            $uptime = (Get-Date) - $watcherStats.StartTime
+            $uptimeFormatted = "{0:D2}d {1:D2}h {2:D2}m {3:D2}s" -f $uptime.Days, $uptime.Hours, $uptime.Minutes, $uptime.Seconds
+            
+            # Log heartbeat with stats
+            Write-Log "Watcher still active... (uptime: $uptimeFormatted, processed: $($watcherStats.FilesProcessed), success: $($watcherStats.SuccessCount), failed: $($watcherStats.FailureCount))"
+            
+            # Check if backup is needed
+            if ($config.Backup.Enabled -and $lastBackup) {
+                $lastBackupTime = [datetime]::Parse($lastBackup)
+                $nextBackupTime = $lastBackupTime.AddHours($config.Backup.BackupInterval)
+                if ((Get-Date) -gt $nextBackupTime) {
+                    if ($PSCmdlet.ShouldProcess("MarkSnips data", "Perform scheduled backup")) {
+                        Write-Log "Performing scheduled backup"
+                        $backupFile = Backup-MarkSnipsData -Config $config
+                        if ($backupFile) {
+                            Write-Log "Backup created: $backupFile"
+                            $lastBackup = (Get-Date).ToString("o")
+                        } else {
+                            Write-Log "Backup failed" -IsError
+                        }
+                    }
+                }
+            }
         }
         
         # Sleep to prevent CPU overuse
         Start-Sleep -Seconds $pollingInterval
     }
+} catch {
+    Write-Log "Watcher error: $($_.Exception.Message)" -IsError
+    throw
 } finally {
-    Write-Log "File monitoring stopped."
+    # Calculate final statistics
+    $uptime = (Get-Date) - $watcherStats.StartTime
+    $uptimeFormatted = "{0:D2}d {1:D2}h {2:D2}m {3:D2}s" -f $uptime.Days, $uptime.Hours, $uptime.Minutes, $uptime.Seconds
+    
+    Write-Log "File monitoring stopped after $uptimeFormatted. Processed $($watcherStats.FilesProcessed) files ($($watcherStats.SuccessCount) successful, $($watcherStats.FailureCount) failed)."
     Show-Notification -Title "Markdown Watcher Stopped" -Message "File monitoring has been stopped."
 }

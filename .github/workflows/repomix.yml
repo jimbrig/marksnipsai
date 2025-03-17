@@ -1,0 +1,38 @@
+name: Run Repomix
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  run-repomix:
+    name: Execute Repomix
+    runs-on: ubuntu-latest
+
+    steps:
+    # Step 1: Check out the repository
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    # Step 2: Set up Node.js environment
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16' # Specify your preferred Node.js version
+
+    # Step 3: Install Repomix globally (if not already installed)
+    - name: Install Repomix
+      run: npm install -g repomix
+
+    # Step 4: Run Repomix to generate the output file
+    - name: Run Repomix
+      run: npx repomix
+
+    # Step 5 (Optional): Upload the generated file as an artifact for review
+    - name: Upload Repomix Output
+      uses: actions/upload-artifact@v3
+      with:
+        name: repomix-output
+        path: Docs/repomix.yml
