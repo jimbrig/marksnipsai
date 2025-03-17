@@ -6,6 +6,12 @@
 
 ## [Unreleased]
 
+## Bug Fixes
+
+- Fix gha ([616b101](https://github.com/jimbrig/marksnipsai/commit/616b101911be512dd9b3a145a4ad8947a15ff70a))  - (Jimmy Briggs)
+
+## [1](https://github.com/jimbrig/marksnipsai/tree/v1)- (2025-03-17)
+
 ## Configuration
 
 - Remove ignored file from cache ([5b80a3f](https://github.com/jimbrig/marksnipsai/commit/5b80a3f8c820dde3c3592778df74d15c8910ab72))  - (Jimmy Briggs)
