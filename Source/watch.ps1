@@ -139,10 +139,7 @@ function Write-Log {
 
 function Show-Notification {
     param(
-        [Parameter(Mandatory = $true)]
         [string]$Title,
-        
-        [Parameter(Mandatory = $true)]
         [string]$Message
     )
     
@@ -161,18 +158,9 @@ function Show-Notification {
         return
     }
     
-    try {
-        # Try Windows 10/11 notification API
-        Add-Type -AssemblyName System.Windows.Forms
-        $notification = New-Object System.Windows.Forms.NotifyIcon
-        $notification.Icon = [System.Drawing.SystemIcons]::Information
-        $notification.BalloonTipTitle = $Title
-        $notification.BalloonTipText = $Message
-        $notification.Visible = $true
-        $notification.ShowBalloonTip(5000)
-        
-        # Force garbage collection to prevent icon persisting
-        [System.GC]::Collect()
+    try {        
+        # Import the module and display notification
+        New-BurntToastNotification -Text $Title, $Message
         Write-Log "Notification displayed: $Title - $Message"
     } catch {
         Write-Log "Failed to display notification: $($_.Exception.Message)" -Warning

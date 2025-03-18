@@ -43,6 +43,23 @@ param(
     [switch]$Configure
 )
 
+# Register for Control+C event to ensure clean shutdown
+$null = Register-EngineEvent -SourceIdentifier ([System.Console]::CancelKeyPress) -Action {
+    Write-Host "Stopping MarkSnips gracefully..." -ForegroundColor Yellow
+    # Cleanup code here
+    [System.GC]::Collect()
+    [System.GC]::WaitForPendingFinalizers()
+    exit
+}
+
+# Register for process exit
+$null = Register-EngineEvent -SourceIdentifier ([System.AppDomain]::CurrentDomain.ProcessExit) -Action {
+    Write-Host "Process exiting, performing cleanup..." -ForegroundColor Yellow
+    # Cleanup code here
+    [System.GC]::Collect()
+    [System.GC]::WaitForPendingFinalizers()
+}
+
 # Set base paths
 $baseDir = "$env:USERPROFILE\Downloads\MarkSnips"
 $sourceDir = Join-Path $baseDir "Source"
