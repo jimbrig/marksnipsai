@@ -14,6 +14,10 @@
 
 - Add repomix GHA badge ([271fadb](https://github.com/jimbrig/marksnipsai/commit/271fadb025e00fb5972bdc84df013aa43b40f466))  - (Jimmy Briggs)
 
+## Features
+
+- Add BurntToast Notifications ([b0eba59](https://github.com/jimbrig/marksnipsai/commit/b0eba59cfce86ae3c47bc5e3f72df61073b3bed6))  - (Jimmy Briggs)
+
 ## [1](https://github.com/jimbrig/marksnipsai/tree/v1)- (2025-03-17)
 
 ## Configuration
