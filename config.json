@@ -1,35 +1,35 @@
 {
   "Backup": {
-    "LastBackup": "2025-03-17T19:08:54.3305688-04:00",
-    "BackupInterval": 24,
     "MaxBackupSets": 5,
-    "Enabled": true
+    "Enabled": true,
+    "BackupInterval": 24,
+    "LastBackup": "2025-03-17T20:20:02.6540885-04:00"
   },
   "Files": {
-    "LogFile": "C:\\Users\\jimmy\\Downloads\\MarkSnips\\Logs\\watcher.log",
-    "ConfigFile": "C:\\Users\\jimmy\\Downloads\\MarkSnips\\config.json"
-  },
-  "Folders": {
-    "Enhanced": "C:\\Users\\jimmy\\Downloads\\MarkSnips\\Enhanced",
-    "Backups": "C:\\Users\\jimmy\\Downloads\\MarkSnips\\Backups",
-    "Originals": "C:\\Users\\jimmy\\Downloads\\MarkSnips\\Originals",
-    "Logs": "C:\\Users\\jimmy\\Downloads\\MarkSnips\\Logs",
-    "Base": "C:\\Users\\jimmy\\Downloads\\MarkSnips"
+    "ConfigFile": "C:\\Users\\jimmy\\Downloads\\MarkSnips\\config.json",
+    "LogFile": "C:\\Users\\jimmy\\Downloads\\MarkSnips\\Logs\\watcher.log"
   },
   "AIPrompts": {
-    "FilenamePrompt": "Please create a concise, descriptive filename for this markdown document.\r\nThe filename should:\r\n1. Clearly summarize the main topic of the document\r\n2. Be between 3-7 words\r\n3. Use only lowercase letters, numbers, and hyphens (no spaces)\r\n4. End with .md extension\r\n5. Be a clean, SEO-friendly URL slug\r\n\r\nHere's the document content:\r\n\r\n`markdown\r\n{content}\r\n`\r\n\r\nRespond with ONLY the filename and nothing else.",
-    "EnhancementPrompt": "Take the following markdown content and restructure it for better readability, formatting, and consistency:\r\n\r\n`markdown\r\n{content}\r\n`\r"
-  },
-  "Notifications": {
-    "ShowErrorNotifications": true,
-    "ShowSuccessNotifications": true,
-    "Enabled": true
+    "EnhancementPrompt": "Take the following markdown content and restructure it for better readability, formatting, and consistency:\r\n\r\n`markdown\r\n{content}\r\n`\r",
+    "FilenamePrompt": "Please create a concise, descriptive filename for this markdown document.\r\nThe filename should:\r\n1. Clearly summarize the main topic of the document\r\n2. Be between 3-7 words\r\n3. Use only lowercase letters, numbers, and hyphens (no spaces)\r\n4. End with .md extension\r\n5. Be a clean, SEO-friendly URL slug\r\n\r\nHere's the document content:\r\n\r\n`markdown\r\n{content}\r\n`\r\n\r\nRespond with ONLY the filename and nothing else."
   },
   "Watcher": {
+    "HeartbeatInterval": 5,
+    "PollingInterval": 5,
     "FileTrackingExpiration": 60,
     "FileFilter": "*.md",
-    "ProcessingDelay": 2,
-    "HeartbeatInterval": 5,
-    "PollingInterval": 5
+    "ProcessingDelay": 2
+  },
+  "Folders": {
+    "Backups": "C:\\Users\\jimmy\\Downloads\\MarkSnips\\Backups",
+    "Enhanced": "C:\\Users\\jimmy\\Downloads\\MarkSnips\\Enhanced",
+    "Base": "C:\\Users\\jimmy\\Downloads\\MarkSnips",
+    "Originals": "C:\\Users\\jimmy\\Downloads\\MarkSnips\\Originals",
+    "Logs": "C:\\Users\\jimmy\\Downloads\\MarkSnips\\Logs"
+  },
+  "Notifications": {
+    "Enabled": true,
+    "ShowErrorNotifications": true,
+    "ShowSuccessNotifications": true
   }
 }
